@@ -28,7 +28,9 @@
     <!-- * * * * * * Mobile menu * * * * * * -->
     <div class="mobile-menu">
       <span class="mobile-menu-close close"></span>
-      <a href="#callback" class="callback-btn fancyboxModal hidden-sm"><i class="fa fa-phone"></i> Заказать звонок</a>
+      <a href="#callback" class="callback-btn fancyboxModal hidden-sm" data-href="modal-callback"
+        ><i class="fa fa-phone"></i> Заказать звонок</a
+      >
       <div class="push20"></div>
       <ul>
         <li><a href="#services">Цены на услуги</a></li>
@@ -63,7 +65,9 @@
               <span></span>
               <span></span>
             </div>
-            <a href="#callback" class="callback-btn fancyboxModal hidden-xs">Заказать звонок</a>
+            <a href="#callback" class="callback-btn fancyboxModal hidden-xs" data-href="modal-callback"
+              >Заказать звонок</a
+            >
 
             <!-- * * * * * * Top menu * * * * * * -->
             <div class="top-menu visible-md-inline-block visible-lg-inline-block">
@@ -138,7 +142,12 @@
             <div class="row services-carousel">
               <div class="col-sm-6 col-md-4">
                 <div class="element relative">
-                  <a class="absolute fancyboxModal" href="#application" data-application="Аварийный выезд"></a>
+                  <a
+                    class="absolute fancyboxModal"
+                    href="#application"
+                    data-application="Аварийный выезд"
+                    data-href="modal-callback"
+                  ></a>
                   <div class="img-wrapper">
                     <img src="images/service1.jpg" />
                   </div>
@@ -158,6 +167,7 @@
                     class="absolute fancyboxModal"
                     href="#application"
                     data-application="Монтаж или замена электропроводки"
+                    data-href="modal-callback"
                   ></a>
                   <div class="img-wrapper">
                     <img src="images/service2.jpg" />
@@ -178,6 +188,7 @@
                     class="absolute fancyboxModal"
                     href="#application"
                     data-application="Ремонт, замена, перенос розеток"
+                    data-href="modal-callback"
                   ></a>
                   <div class="img-wrapper">
                     <img src="images/service3.jpg" />
@@ -194,7 +205,12 @@
               </div>
               <div class="col-sm-6 col-md-4">
                 <div class="element relative">
-                  <a class="absolute fancyboxModal" href="#application" data-application="Замена электросчетчика"></a>
+                  <a
+                    class="absolute fancyboxModal"
+                    href="#application"
+                    data-application="Замена электросчетчика"
+                    data-href="modal-callback"
+                  ></a>
                   <div class="img-wrapper">
                     <img src="images/service4.jpg" />
                   </div>
@@ -210,7 +226,12 @@
               </div>
               <div class="col-sm-6 col-md-4">
                 <div class="element relative">
-                  <a class="absolute fancyboxModal" href="#application" data-application="Установка, замена люстры"></a>
+                  <a
+                    class="absolute fancyboxModal"
+                    href="#application"
+                    data-application="Установка, замена люстры"
+                    data-href="modal-callback"
+                  ></a>
                   <div class="img-wrapper">
                     <img src="images/service5.jpg" />
                   </div>
@@ -226,7 +247,12 @@
               </div>
               <div class="col-sm-6 col-md-4">
                 <div class="element relative">
-                  <a class="absolute fancyboxModal" href="#application" data-application="Установка светильников"></a>
+                  <a
+                    class="absolute fancyboxModal"
+                    href="#application"
+                    data-application="Установка светильников"
+                    data-href="modal-callback"
+                  ></a>
                   <div class="img-wrapper">
                     <img src="images/service6.jpg" />
                   </div>
@@ -258,7 +284,7 @@
         <div class="container text-center">
           <span class="f30 helios">Не нашли нужной услуги?</span>
           <div class="push20 visible-xs visible-sm"></div>
-          <a class="button button-services fancyboxModal invert" href="#feedback"
+          <a class="button button-services fancyboxModal invert" href="#feedback" data-href="modal-callback"
             >Звоните, мы обязательно вам поможем!</a
           >
         </div>
@@ -560,31 +586,32 @@
     </div>
     <!-- * * * * * * Footer: end * * * * * * -->
 
-    <div class="modal-overlay"></div>
-    <!-- * * * * * * Callback modal block * * * * * * -->
-    <div class="modal-callback" id="callback">
-      <div class="modal-close">
-        <img src="images/close_icon_green.svg" alt="modal-close" />
-      </div>
-      <div class="title-h2">Мы перезвоним через 5 минут!</div>
-      <br />
-      <div class="rf">
-        <form action="" name="form-callback">
-          <div class="form-group">
-            <input type="text" name="fio" class="form-control" placeholder="Ваше имя" />
-          </div>
+    <div class="modal-overlay">
+      <div class="modal-callback" id="callback">
+        <div class="modal-close">
+          <img src="images/close_icon_green.svg" alt="modal-close" class="modal-close__img" />
+        </div>
+        <div class="title-h2">Мы перезвоним через 5 минут!</div>
+        <br />
+        <div class="rf">
+          <form action="" name="form-callback">
+            <div class="form-group">
+              <input type="text" name="fio" class="form-control" placeholder="Ваше имя" />
+            </div>
 
-          <div class="form-group">
-            <input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" />
-          </div>
-          <p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
-          <div>
-            <input type="submit" class="button btn feedback" value="Отправить" />
-          </div>
-        </form>
+            <div class="form-group">
+              <input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" />
+            </div>
+            <p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
+            <div>
+              <input type="submit" class="button btn feedback" value="Отправить" />
+            </div>
+          </form>
+        </div>
       </div>
+      <!-- * * * * * * Callback modal block: end * * * * * * -->
     </div>
-    <!-- * * * * * * Callback modal block: end * * * * * * -->
+    <!-- * * * * * * Callback modal block * * * * * * -->
 
     <!-- * * * * * * Feedback modal block * * * * * * -->
     <div class="modal" id="feedback">
