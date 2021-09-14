@@ -844,6 +844,7 @@ hr.white {
 .top-slider .slick-dots {
   position: absolute;
   bottom: 25px;
+  z-index: 10;
 }
 .top-slider .slick-dots li {
   border-color: #fff !important;
@@ -856,6 +857,13 @@ hr.white {
   height: 450px;
 }
 .top-slider .item {
+  display: none;
+  overflow: hidden;
+  height: 450px;
+  position: relative;
+}
+.top-slider .item.active {
+  display: block;
   overflow: hidden;
   height: 450px;
   position: relative;
@@ -902,7 +910,7 @@ video#video_background {
 }
 
 @media only screen and (min-width: 768px) {
-  .top-slider .item {
+  .top-slider .item.active {
     height: 400px;
   }
   .top-slider {
@@ -928,7 +936,7 @@ video#video_background {
 }
 
 @media only screen and (min-width: 992px) {
-  .top-slider .item {
+  .top-slider .item.active {
     height: 520px;
   }
   .top-slider {
@@ -963,7 +971,7 @@ video#video_background {
 }
 
 @media only screen and (min-width: 1360px) {
-  .top-slider .item {
+  .top-slider .item.active {
     height: 600px;
   }
   .top-slider {
