@@ -4,6 +4,18 @@ const slider = () => {
     slideTable = slider.querySelectorAll('.table'),
     slickDots = slider.querySelector('.slick-dots');
 
+  let widthWindow = window.innerWidth;
+
+  window.addEventListener('resize', () => {
+    widthWindow = window.innerWidth;
+  });
+
+  if (widthWindow < 768) {
+    slideTable.forEach((elem) => {
+      elem.classList.remove('active');
+    });
+  }
+
   slide.forEach(() => {
     const li = document.createElement('li');
     slickDots.append(li);
@@ -16,7 +28,7 @@ const slider = () => {
     interval;
 
   const prevSlide = (elem, index, strClass) => {
-    if (!elem[index].classList.contains(strClass)) {
+    if (!elem[index].classList.contains('slick-active') & !elem[index].classList.contains('table')) {
       elem[index].style.opacity = '0';
     }
     elem[index].classList.remove(strClass);
@@ -24,7 +36,7 @@ const slider = () => {
 
   const nextSlide = (elem, index, strClass) => {
     elem[index].classList.add(strClass);
-    if (!elem[index].classList.contains('slick-active')) {
+    if (!elem[index].classList.contains('slick-active') & !elem[index].classList.contains('table')) {
       let op = 0;
       function startAnimation() {
         if (op !== 39) {
@@ -38,16 +50,27 @@ const slider = () => {
   };
 
   const autoPlaySlide = () => {
-    prevSlide(slide, currentSlide, 'active');
-    prevSlide(slideTable, currentSlide, 'active');
-    prevSlide(dot, currentSlide, 'slick-active');
-    currentSlide++;
-    if (currentSlide >= slide.length) {
-      currentSlide = 0;
+    if (widthWindow >= 768) {
+      prevSlide(slide, currentSlide, 'active');
+      prevSlide(slideTable, currentSlide, 'active');
+      prevSlide(dot, currentSlide, 'slick-active');
+      currentSlide++;
+      if (currentSlide >= slide.length) {
+        currentSlide = 0;
+      }
+      nextSlide(slide, currentSlide, 'active');
+      nextSlide(slideTable, currentSlide, 'active');
+      nextSlide(dot, currentSlide, 'slick-active');
+    } else {
+      prevSlide(slide, currentSlide, 'active');
+      prevSlide(dot, currentSlide, 'slick-active');
+      currentSlide++;
+      if (currentSlide >= slide.length) {
+        currentSlide = 0;
+      }
+      nextSlide(slide, currentSlide, 'active');
+      nextSlide(dot, currentSlide, 'slick-active');
     }
-    nextSlide(slide, currentSlide, 'active');
-    nextSlide(slideTable, currentSlide, 'active');
-    nextSlide(dot, currentSlide, 'slick-active');
   };
 
   const startSlide = (time = 4000) => {
@@ -65,8 +88,14 @@ const slider = () => {
 
     if (!target.matches('li')) return;
 
-    prevSlide(slide, currentSlide, 'active');
-    prevSlide(dot, currentSlide, 'slick-active');
+    if (widthWindow >= 768) {
+      prevSlide(slide, currentSlide, 'active');
+      prevSlide(slideTable, currentSlide, 'active');
+      prevSlide(dot, currentSlide, 'slick-active');
+    } else {
+      prevSlide(slide, currentSlide, 'active');
+      prevSlide(dot, currentSlide, 'slick-active');
+    }
 
     if (target.matches('li')) {
       dot.forEach((elem, index) => {
@@ -84,8 +113,14 @@ const slider = () => {
       currentSlide = slide.length - 1;
     }
 
-    nextSlide(slide, currentSlide, 'active');
-    nextSlide(dot, currentSlide, 'slick-active');
+    if (widthWindow >= 768) {
+      nextSlide(slide, currentSlide, 'active');
+      nextSlide(slideTable, currentSlide, 'active');
+      nextSlide(dot, currentSlide, 'slick-active');
+    } else {
+      nextSlide(slide, currentSlide, 'active');
+      nextSlide(dot, currentSlide, 'slick-active');
+    }
   });
 
   slider.addEventListener('mouseover', (event) => {

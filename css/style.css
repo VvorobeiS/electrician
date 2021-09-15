@@ -881,6 +881,12 @@ hr.white {
 .top-slider .table {
   position: relative;
   z-index: 10;
+  visibility: hidden;
+}
+.top-slider .table.active {
+  position: relative;
+  z-index: 10;
+  visibility: visible;
 }
 .video-block {
   height: 100%;
@@ -943,7 +949,6 @@ video#video_background {
     height: 520px;
   }
   .top-slider .table {
-    opacity: 0;
     visibility: hidden;
     -webkit-transform: scale(1.5);
     -ms-transform: scale(1.5);
@@ -958,7 +963,6 @@ video#video_background {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-    opacity: 1;
     visibility: visible;
   }
 }
@@ -1032,7 +1036,7 @@ video#video_background {
 .accordeon .element.active .title:before {
   background: url(../images/minus.png) 50% 50% no-repeat #333;
 }
-.accordeon > div:first-of-type .element-content {
+.element-content.active {
   display: block;
 }
 .accordeon .element .title:hover:before {
@@ -1223,6 +1227,7 @@ video#video_background {
 }
 
 .up {
+  display: none;
   position: fixed;
   bottom: 50px;
   right: 50px;
@@ -1233,6 +1238,10 @@ video#video_background {
   padding: 0 2px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.up.active {
+  display: block;
 }
 
 @media only screen and (min-width: 992px) {
