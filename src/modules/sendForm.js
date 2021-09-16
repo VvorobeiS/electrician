@@ -40,7 +40,7 @@ const sendForm = () => {
         }
 
         if (loadIconDiv) {
-          loadIconDiv.textContent = '';
+          loadIconDiv.textContent = 'Идет отправка';
         }
 
         loadIconDiv.classList.remove('loadIconText');

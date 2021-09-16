@@ -20,7 +20,6 @@ const validationInputs = () => {
         elem = elem.charAt(0).toUpperCase() + elem.slice(1);
         newString.push(elem);
       });
-      console.log(newString);
       item.value = newString.join(' ');
     });
   });
