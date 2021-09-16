@@ -3,6 +3,7 @@
 import common from './modules/common';
 import toggleModal from './modules/toggleModal';
 import slider from './modules/slider';
+import carousel from './modules/carousel';
 import accordeon from './modules/accordeon';
 
 // Общие функции
@@ -13,6 +14,9 @@ toggleModal();
 
 // Слайдер
 slider();
+
+// Карусель
+carousel();
 
 // Аккордеон
 accordeon();
