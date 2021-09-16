@@ -5,6 +5,7 @@ import toggleModal from './modules/toggleModal';
 import slider from './modules/slider';
 import carousel from './modules/carousel';
 import accordeon from './modules/accordeon';
+import validationInputs from './modules/validationInputs';
 
 // Общие функции
 common();
@@ -20,3 +21,6 @@ carousel();
 
 // Аккордеон
 accordeon();
+
+// Валидация
+validationInputs();
