@@ -6,6 +6,7 @@ import slider from './modules/slider';
 import carousel from './modules/carousel';
 import accordeon from './modules/accordeon';
 import validationInputs from './modules/validationInputs';
+import sendForm from './modules/sendForm';
 
 // Общие функции
 common();
@@ -24,3 +25,6 @@ accordeon();
 
 // Валидация
 validationInputs();
+
+// Отправка формы
+sendForm();
