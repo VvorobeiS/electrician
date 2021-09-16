@@ -35,7 +35,6 @@ const sendForm = () => {
 
       setTimeout(() => {
         const subBtn = el.querySelector('[type=submit]');
-        console.log(subBtn);
         if (subBtn.classList.contains('cancel')) {
           return;
         }
@@ -65,7 +64,6 @@ const sendForm = () => {
         postData(body)
           .then((response) => {
             if (response.status !== 200) {
-              console.log('!');
               throw new Error('status network not 200');
             }
             loadIconDiv.classList.remove('sk-fading-circle');
@@ -77,7 +75,6 @@ const sendForm = () => {
             }, 3000);
           })
           .catch((err) => {
-            console.error(err);
             loadReqText(errorMessage);
           });
       }, 500);

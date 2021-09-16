@@ -37,7 +37,6 @@ const carousel = () => {
     }
     addStyle() {
       let style = document.getElementById('slider');
-      console.log(style);
       if (!style) {
         style = document.createElement('style');
         style.id = 'sliderCarusel-style';
@@ -87,7 +86,6 @@ const carousel = () => {
     prevSlider() {
       if (this.options.infinity || this.options.position > 0) {
         --this.options.position;
-        console.log(this.options.position);
         if (this.options.position < 0) {
           this.options.position = this.slides.length - this.slidesToShow;
         }
@@ -97,7 +95,6 @@ const carousel = () => {
     nextSlider() {
       if (this.options.infinity || this.options.position < this.slides.length - this.slidesToShow) {
         ++this.options.position;
-        console.log(this.options.position);
         if (this.options.position > this.slides.length - this.slidesToShow) {
           this.options.position = 0;
         }
