@@ -18,7 +18,7 @@ const carousel = () => {
     init() {
       this.addGloClass();
       this.addStyle();
-      if (this.pver && this.next) {
+      if (this.prev && this.next) {
         this.controlSlider();
       } else {
         this.addArrow();
