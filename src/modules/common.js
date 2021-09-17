@@ -1,6 +1,6 @@
 const common = () => {
   // Убираем якори из адресной строки
-  const linksMenu = document.querySelectorAll('.top-menu>ul>li>a');
+  const linksMenu = document.querySelectorAll('a');
   linksMenu.forEach((elem) => {
     elem.addEventListener('click', (event) => {
       event.preventDefault();
