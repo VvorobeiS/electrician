@@ -2,7 +2,6 @@ const toggleModal = () => {
   const modalOverlay = document.querySelector('.modal-overlay'),
     modalCallback = document.querySelector('.modal-callback'),
     btnModal = document.querySelectorAll('[data-href=modal-callback]'),
-    btnUp = document.querySelector('.up'),
     body = document.querySelector('body');
 
   btnModal.forEach((elem) => {
@@ -11,7 +10,6 @@ const toggleModal = () => {
       modalOverlay.style.display = 'block';
       modalCallback.style.opacity = '0';
       modalCallback.style.display = 'block';
-      btnUp.style.display = 'none';
       body.style.overflow = 'hidden';
       function startAnimation() {
         if (op !== 29) {
@@ -30,7 +28,6 @@ const toggleModal = () => {
       modalOverlay.style.display = 'none';
       modalCallback.style.opacity = '0';
       modalCallback.style.display = 'none';
-      btnUp.style.display = 'initial';
       body.style.overflow = 'initial';
     } else {
       target = target.closest('.modal-callback');
@@ -38,7 +35,6 @@ const toggleModal = () => {
         modalOverlay.style.display = 'none';
         modalCallback.style.opacity = '0';
         modalCallback.style.display = 'none';
-        btnUp.style.display = 'initial';
         body.style.overflow = 'initial';
       }
     }
